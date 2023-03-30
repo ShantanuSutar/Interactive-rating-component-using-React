@@ -14,6 +14,15 @@
   text-align: center;
   margin: 0 20px;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Overpass";
+  color: var(--White);
+  font-size: 15px;
+  font-weight: 400;
+}
 
 body {
   background-color: var(--Very-Dark-Blue);
@@ -34,4 +43,97 @@ body {
   border-radius: 20px;
   box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
     rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+
+.active {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 25px;
+}
+
+.active picture {
+  border-radius: 50%;
+  background-color: hsl(214, 13%, 21%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px;
+}
+
+.active picture svg {
+  transform: scale(1);
+}
+
+.active h1 {
+  font-size: 23px;
+  margin-top: 25px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.active p {
+  color: var(--Light-Grey);
+  font-size: 13px;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.active section {
+  margin-top: 10px;
+  margin-bottom: 25px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.active section p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(214, 13%, 21%);
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  font-size: 15px;
+}
+
+.active section p:hover {
+  cursor: pointer;
+  background-color: var(--Orange);
+  color: var(--White);
+}
+.active section p.select {
+  background-color: var(--Light-Grey);
+  color: var(--White);
+}
+
+.active .submit-btn {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--Orange);
+  border: none;
+  padding: 10px;
+  border-radius: 25px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: all 0.1s ease-in-out;
+}
+
+.active .submit-btn:hover {
+  cursor: pointer;
+  background-color: var(--White);
+  color: var(--Orange);
+}
+
+.submitted {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
 }
