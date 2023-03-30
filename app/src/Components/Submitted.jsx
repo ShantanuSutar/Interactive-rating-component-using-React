@@ -1,6 +1,6 @@
 import React from "react";
 
-const Submitted = () => {
+const Submitted = ({ finalRating }) => {
   return (
     <div className="submitted">
       <svg width="162" height="108" xmlns="http://www.w3.org/2000/svg">
@@ -89,11 +89,11 @@ const Submitted = () => {
           />
         </g>
       </svg>
-      <article>You selected 4 out of 5</article>
+      <article>You selected {finalRating} out of 5</article>
       <h1>Thank You!</h1>
       <p>
         We appreciate you taking the time to give a rating. If you ever need
-        more support, don't hesitate to get in touch!
+        more support, don't hesitate to get in touch!{" "}
       </p>
     </div>
   );

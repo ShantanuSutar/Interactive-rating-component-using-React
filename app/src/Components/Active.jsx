@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-const Active = () => {
+const Active = ({ finalRating, setFinalRating, setSubmitted }) => {
   const [rating, setRating] = useState({
     one: true,
     two: false,
@@ -8,6 +8,11 @@ const Active = () => {
     four: false,
     five: false,
   });
+
+  const handleSubmit = () => {
+    if (!finalRating) return;
+    setSubmitted(true);
+  };
 
   return (
     <div className="active">
@@ -21,7 +26,7 @@ const Active = () => {
       </picture>
       <h1>How did we do?</h1>
       <p>
-        Please let us know how we didd with your support request.All feedback is
+        Please let us know how we did with your support request. All feedback is
         appreciated to help us improve our offering!
       </p>
       <section>
@@ -34,6 +39,7 @@ const Active = () => {
               four: false,
               five: false,
             });
+            setFinalRating(1);
           }}
           className={rating.one ? "select" : ""}
         >
@@ -48,6 +54,7 @@ const Active = () => {
               four: false,
               five: false,
             });
+            setFinalRating(2);
           }}
           className={rating.two ? "select" : ""}
         >
@@ -62,6 +69,7 @@ const Active = () => {
               four: false,
               five: false,
             });
+            setFinalRating(3);
           }}
           className={rating.three ? "select" : ""}
         >
@@ -76,6 +84,7 @@ const Active = () => {
               four: true,
               five: false,
             });
+            setFinalRating(4);
           }}
           className={rating.four ? "select" : ""}
         >
@@ -90,13 +99,16 @@ const Active = () => {
               four: false,
               five: true,
             });
+            setFinalRating(5);
           }}
           className={rating.five ? "select" : ""}
         >
           5
         </p>
       </section>
-      <button className="submit-btn">Submit</button>
+      <button className="submit-btn" onClick={handleSubmit}>
+        Submit
+      </button>
     </div>
   );
 };
