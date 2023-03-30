@@ -1,5 +1,14 @@
 import React from "react";
+import { useState } from "react";
 const Active = () => {
+  const [rating, setRating] = useState({
+    one: true,
+    two: false,
+    three: false,
+    four: false,
+    five: false,
+  });
+
   return (
     <div className="active">
       <picture>
@@ -16,11 +25,76 @@ const Active = () => {
         appreciated to help us improve our offering!
       </p>
       <section>
-        <p>1</p>
-        <p>2</p>
-        <p>3</p>
-        <p>4</p>
-        <p>5</p>
+        <p
+          onClick={() => {
+            setRating({
+              one: true,
+              two: false,
+              three: false,
+              four: false,
+              five: false,
+            });
+          }}
+          className={rating.one ? "select" : ""}
+        >
+          1
+        </p>
+        <p
+          onClick={() => {
+            setRating({
+              one: false,
+              two: true,
+              three: false,
+              four: false,
+              five: false,
+            });
+          }}
+          className={rating.two ? "select" : ""}
+        >
+          2
+        </p>
+        <p
+          onClick={() => {
+            setRating({
+              one: false,
+              two: false,
+              three: true,
+              four: false,
+              five: false,
+            });
+          }}
+          className={rating.three ? "select" : ""}
+        >
+          3
+        </p>
+        <p
+          onClick={() => {
+            setRating({
+              one: false,
+              two: false,
+              three: false,
+              four: true,
+              five: false,
+            });
+          }}
+          className={rating.four ? "select" : ""}
+        >
+          4
+        </p>
+        <p
+          onClick={() => {
+            setRating({
+              one: false,
+              two: false,
+              three: false,
+              four: false,
+              five: true,
+            });
+          }}
+          className={rating.five ? "select" : ""}
+        >
+          5
+        </p>
       </section>
       <button className="submit-btn">Submit</button>
     </div>

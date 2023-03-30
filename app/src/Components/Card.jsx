@@ -4,7 +4,7 @@ import Submitted from "./Submitted";
 const Card = () => {
   return (
     <div className="card">
-      <Submitted />
+      <Active />
     </div>
   );
 };
